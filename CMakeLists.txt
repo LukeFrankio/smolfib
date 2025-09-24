@@ -7,6 +7,9 @@ add_executable(fib src/main.cpp)
 add_library(fiblib INTERFACE)
 target_include_directories(fiblib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
+add_executable(fib_big src/fib_big.cpp)
+target_link_libraries(fib_big PRIVATE fiblib)
+
 include(FetchContent)
 FetchContent_Declare(
 	googletest
